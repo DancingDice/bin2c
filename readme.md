@@ -1,13 +1,13 @@
-# bin2h
+# bin2c
 
 
 
-This repository hosts the source code for the binary file to C header file converter, "bin2h".
+This repository hosts the source code for the binary file to C file converter, "bin2c".
 
 
 
 This program extracts data in unaltered binary form from the given input file and outputs that data as an array of unsigned characters ("unsigned char
-const", specifically) into a C language header file.
+const", specifically) into a C language file.
 
 
 
@@ -17,4 +17,5 @@ const", specifically) into a C language header file.
 
 
 
-bin2h.exe \<input> \[-p \<prefix>] \[-s \<suffix>]
+bin2c.exe <input> \[-p <prefix>] \[-s <suffix>]
+

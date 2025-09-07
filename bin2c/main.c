@@ -159,7 +159,7 @@ static bool main_outputusage
     {
         int error;
 
-        error =    fputs ( "\nBinary file to C header file converter (bin2h), version 1.0.\n\n",
+        error =    fputs ( "\nBinary file to C file converter (bin2c), version 1.1.\n\n",
                            stderr );
         success &= error >= 0;
 
@@ -277,7 +277,7 @@ static char const * main_findname
 
 
 /*
-** main_runbin2h function
+** main_runbin2c function
 *
 *  This is the core function of the program, which only the "main" function
 *  should call, after parsing and validating the command-line arguments.
@@ -311,7 +311,7 @@ static char const * main_findname
 *  header file.
 */
 
-static bool main_runbin2h
+static bool main_runbin2c
 (
     FILE *       infile,
     FILE *       outfile,
@@ -870,7 +870,7 @@ static bool main_parseargs
 ** main function
 *
 *  This is the program's main function.  It's core purpose is to process
-*  arguments and call the "main_runbin2h" function with validated parameters.
+*  arguments and call the "main_runbin2c" function with validated parameters.
 *
 *  Parameter(s)
 *
@@ -888,15 +888,15 @@ static bool main_parseargs
 *  Remarks
 *
 *  While this function is the entry point to the program, it largely just
-*  processes arguments and calls the "main_runbin2h" function, which essentially
+*  processes arguments and calls the "main_runbin2c" function, which essentially
 *  is the program.  Where to draw the line between processing arguments and
 *  "being the program" is an art.  This function goes all the way to
 *  constructing pathnames and creating "FILE" objects because this program only
 *  needs two "FILE" objects and successfully creating "FILE" objects is strong
 *  validation.  Conversely, it stops processing symbol names to simply forward
 *  the prefix, the core name, and the suffix as individual parameters to
-*  "main_runbin2h" given that avoids unnecessary heap allocations, keeps the
-*  "main_runbin2h" function's parameters similar to the command-line arguments,
+*  "main_runbin2c" given that avoids unnecessary heap allocations, keeps the
+*  "main_runbin2c" function's parameters similar to the command-line arguments,
 *  and facilitates future enhancements, such as adding a symbol with something
 *  like a "_length" suffix.
 */
@@ -979,7 +979,7 @@ int main
     ** At this point, argument validation is complete.  Failures until now are
     *  likely due to invalid arguments.  Therefore, outputing the usage
     *  information is a suitable reaction to a failure.  This also means that
-    *  "main_runbin2h" must output its own failure information to the standard
+    *  "main_runbin2c" must output its own failure information to the standard
     *  error pipe.
     */
 
@@ -991,13 +991,13 @@ int main
         }
         else
         {
-            main_outputusage ( "bin2h" );
+            main_outputusage ( "bin2c" );
         }
     }
 
     else
     {
-        success = main_runbin2h ( infile,
+        success = main_runbin2c ( infile,
                                   outfile,
                                   main_shortenname ( inpath ),
                                   prefix,
