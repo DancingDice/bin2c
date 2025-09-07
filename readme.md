@@ -6,9 +6,7 @@ This repository hosts the source code for the binary file to C language file con
 
 
 
-This program extracts data in unaltered binary form from the given input file and outputs that data as an array of
-
-unsigned characters ("unsigned char const", specifically) into C language file(s).
+This program extracts data in unaltered binary form from the given input file and outputs that data as an array of unsigned characters ("unsigned char const", specifically) into C language file(s).
 
 
 
