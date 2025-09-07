@@ -17,5 +17,5 @@ const", specifically) into a C language file.
 
 
 
-bin2c.exe <input> \[-p <prefix>] \[-s <suffix>]
+bin2c.exe \<input> \[-p \<prefix>] \[-s \<suffix>]
 
